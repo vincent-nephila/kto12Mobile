@@ -2,22 +2,21 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
-        id        = "com.oed.kto12Mobile"
+        id        = "com.moodle.moodlemobile"
         versionCode = "20160"
-        version   = "1.0.0">
-    <name>Kto12 Mobile</name>
+        version   = "3.2.0">
+    <name>Moodle Mobile</name>
 
     <description>
-        Kto12 Mobile based on Moodle Mobile 3.2.0
+        Moodle Mobile official app
     </description>
 
     <author href="http://moodle.com" email="mobile@moodle.com">
         Moodle Pty Ltd
-        John Vincent Villanueva
     </author>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-        <string>1.0.0</string>
+        <string>3.2.0</string>
     </gap:config-file>
 
     <gap:platform name="ios" />
