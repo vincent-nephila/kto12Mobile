@@ -9568,7 +9568,7 @@ angular.module('mm.core.login', [])
         controller: 'mmLoginCredentialsCtrl',
         params: {
             siteurl: 'kto12.amauonline.com',
-            username: '',
+            username: 'admin',
             urltoopen: '',
             siteconfig: null
         },
