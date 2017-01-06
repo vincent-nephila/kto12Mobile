@@ -16552,6 +16552,7 @@ angular.module('mm.core.sidemenu')
     $scope.handlers = $mmSideMenuDelegate.getNavHandlers();
     $scope.areNavHandlersLoaded = $mmSideMenuDelegate.areNavHandlersLoaded;
     $scope.siteinfo = $mmSite.getInfo();
+    $scope.siteid = $mmSite.getId();
     $scope.logout = function() {
         $mmSitesManager.logout().finally(function() {
             $state.go('mm_login.sites');
