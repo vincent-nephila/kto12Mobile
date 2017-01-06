@@ -14386,6 +14386,7 @@ angular.module('mm.core.login')
     $scope.toggleDelete = function() {
         $scope.data.showDelete = !$scope.data.showDelete;
     };
+    
     $scope.onItemDelete = function(e, index) {
         e.stopPropagation();
         var site = $scope.sites[index],
@@ -16546,7 +16547,7 @@ angular.module('mm.core.sharedfiles')
 }]);
 
 angular.module('mm.core.sidemenu')
-.controller('mmSideMenuCtrl', ["$scope", "$state", "$mmSideMenuDelegate", "$mmSitesManager", "$mmSite", "$mmEvents", "$timeout", "mmCoreEventLanguageChanged", "mmCoreEventSiteUpdated", "$mmSideMenu", function($scope, $state, $mmSideMenuDelegate, $mmSitesManager, $mmSite, $mmEvents,
+.controller('mmSideMenuCtrl', ["$scope", "$state", "$mmSideMenuDelegate", "$ionicHistory", "$mmLoginHelper", "$mmSitesManager", "$mmSite", "$mmEvents", "$timeout", "mmCoreEventLanguageChanged", "mmCoreEventSiteUpdated", "$mmSideMenu", function($scope, $state, $mmSideMenuDelegate, $mmSitesManager, $mmSite, $mmEvents,
             $timeout, mmCoreEventLanguageChanged, mmCoreEventSiteUpdated, $mmSideMenu) {
     $mmSideMenu.setScope($scope);
     $scope.handlers = $mmSideMenuDelegate.getNavHandlers();
@@ -16558,6 +16559,13 @@ angular.module('mm.core.sidemenu')
             $state.go('mm_login.sites');
         });
     };
+    $scope deleteProfile = function (id){
+		$mmSitesManager.deleteSite(id).then(function(){
+		$mmSitesManager.hasNoSites().then(function() {
+                        $ionicHistory.nextViewOptions({disableBack: true});
+                        $mmLoginHelper.goToAddSite();			
+		});    
+    };    
     $mmSite.getDocsUrl().then(function(docsurl) {
         $scope.docsurl = docsurl;
     });
