@@ -16546,7 +16546,7 @@ angular.module('mm.core.sharedfiles')
 }]);
 
 angular.module('mm.core.sidemenu')
-.controller('mmSideMenuCtrl', ["$scope", "$state", "$mmSideMenuDelegate", "$mmSitesManager", "$mmLoginHelper", "$ionicHistory", "$mmSite", "$mmEvents", "$timeout", "mmCoreEventLanguageChanged", "mmCoreEventSiteUpdated", "$mmSideMenu", function($scope, $state, $mmSideMenuDelegate, $mmSitesManager, $mmSite, $mmEvents,
+.controller('mmSideMenuCtrl', ["$scope", "$state", "$mmSideMenuDelegate", "$mmSitesManager", "$mmSite", "$mmEvents", "$timeout", "mmCoreEventLanguageChanged", "mmCoreEventSiteUpdated", "$mmSideMenu", function($scope, $state, $mmSideMenuDelegate, $mmSitesManager, $mmSite, $mmEvents,
             $timeout, mmCoreEventLanguageChanged, mmCoreEventSiteUpdated, $mmSideMenu) {
     $mmSideMenu.setScope($scope);
     $scope.handlers = $mmSideMenuDelegate.getNavHandlers();
@@ -16554,16 +16554,9 @@ angular.module('mm.core.sidemenu')
     $scope.siteinfo = $mmSite.getInfo();
     $scope.siteid = $mmSite.getId();
     $scope.logout = function() {
-                $mmSitesManager.deleteSite($mmSite.getId()).then(function() {
-                    $mmSitesManager.hasNoSites().then(function() {
-                        $ionicHistory.nextViewOptions({disableBack: true});
-                        $mmLoginHelper.goToAddSite();
-                    });
-                 });
-    	/*
         $mmSitesManager.logout().finally(function() {
             $state.go('mm_login.sites');
-        });*/
+        });
     };
     $mmSite.getDocsUrl().then(function(docsurl) {
         $scope.docsurl = docsurl;
