@@ -16554,15 +16554,8 @@ angular.module('mm.core.sidemenu')
     $scope.siteinfo = $mmSite.getInfo();
     $scope.siteid = $mmSite.getId();
     $scope.logout = function() {
-          /*      $mmSitesManager.deleteSite($mmSite.getId()).then(function() {
-                    $mmSitesManager.hasNoSites().then(function() {
-                        $ionicHistory.nextViewOptions({disableBack: true});
-                        $mmLoginHelper.goToAddSite();
-                    });
-                 });*/
-    	
-        $mmSitesManager.logout().finally(function() {
-            $state.go('mm_login.sites');
+            $mmSitesManager.deleteSite($mmSite.getId()).finally(function() {
+            $state.go('mm_login.site');
         });
     };
     $mmSite.getDocsUrl().then(function(docsurl) {
