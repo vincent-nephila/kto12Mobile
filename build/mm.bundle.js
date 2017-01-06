@@ -16559,7 +16559,7 @@ angular.module('mm.core.sidemenu')
             $state.go('mm_login.sites');
         });
     };
-    $scope deleteProfile = function (id){
+    $scope.deleteProfile = function (id){
 		$mmSitesManager.deleteSite(id).then(function(){
 		$mmSitesManager.hasNoSites().then(function() {
                         $ionicHistory.nextViewOptions({disableBack: true});

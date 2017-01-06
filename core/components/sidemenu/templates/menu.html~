@@ -20,7 +20,7 @@
             <div class="bar bar-header bar-side-menu">
                 <a menu-close mm-user-link userid="{{siteinfo.userid}}" class="item item-avatar item-icon-right full-image">
                     <img ng-src="{{siteinfo.userpictureurl}}" alt="{{ 'mm.core.pictureof' | translate:{$a: siteinfo.fullname} }}" role="presentation" mm-external-content>
-                    <h2>{{siteid}}{{siteinfo.fullname}}</h2>
+                    <h2>{{siteinfo.fullname}}</h2>
                     <p><mm-format-text watch="true">{{siteinfo.sitename}}</mm-format-text></p>
                     <i class="icon ion-ios-arrow-right"></i>
                 </a>
@@ -60,7 +60,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="item item-icon-left" ng-click="logout()" title="{{ 'mm.sidemenu.changesite' | translate}}">
+                        <a class="item item-icon-left" ng-click="deleteProfile($siteid)" title="{{ 'mm.sidemenu.changesite' | translate}}">
                             <i class="icon ion-log-out"></i>{{ 'mm.sidemenu.logout' | translate}}
                         </a>
                     </li>
