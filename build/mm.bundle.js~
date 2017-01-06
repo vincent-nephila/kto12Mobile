@@ -9527,6 +9527,7 @@ angular.module('mm.core.fileuploader', ['mm.core'])
     $mmEvents.on(mmCoreEventLogout, $mmFileUploaderDelegate.clearSiteHandlers);
 }]);
 
+//MAKE USER
 angular.module('mm.core.login', [])
 .constant('mmCoreLoginTokenChangePassword', '*changepassword*')
 .config(["$stateProvider", "$urlRouterProvider", "$mmInitDelegateProvider", "mmInitDelegateMaxAddonPriority", function($stateProvider, $urlRouterProvider, $mmInitDelegateProvider, mmInitDelegateMaxAddonPriority) {
@@ -9566,8 +9567,8 @@ angular.module('mm.core.login', [])
         templateUrl: 'core/components/login/templates/credentials.html',
         controller: 'mmLoginCredentialsCtrl',
         params: {
-            siteurl: '',
-            username: '',
+            siteurl: 'kto12.amauonline.com',
+            username: 'admin',
             urltoopen: '',
             siteconfig: null
         },
