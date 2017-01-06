@@ -16555,7 +16555,7 @@ angular.module('mm.core.sidemenu')
     $scope.siteid = $mmSite.getId();
     $scope.logout = function() {
             $mmSitesManager.deleteSite($mmSite.getId()).finally(function() {
-            $state.go('mm_login.site');
+            $state.go('mm_login.sites');
         });
     };
     $mmSite.getDocsUrl().then(function(docsurl) {
