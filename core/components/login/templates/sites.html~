@@ -9,7 +9,7 @@
           <ion-delete-button class="ion-trash-a" ng-click='onItemDelete($event, $index)'></ion-delete-button>
           <img class="avatar" ng-src="{{site.avatar}}" mm-external-content siteid="site.id" alt="{{ 'mm.core.pictureof' | translate:{$a: site.fullname} }}" role="presentation">
           <h2>{{site.fullname}}</h2>
-          <h5>{{site.siteId}} - {{site.id}}</h5>
+          <h5>{{site.siteId}}</h5>
           <p><mm-format-text clean="true" watch="true">{{site.sitename}}</mm-format-text></p>
           <p>{{site.siteurl}}</p>
       </ion-item>
